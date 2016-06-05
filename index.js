@@ -1,6 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var config = require('./config/config');
+var config = require(__dirname + '/config/config');
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));

@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Patua+One|Lato:100,300);
+html {
+    background: url(50.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.container {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    font-family: 'Patua One', cursive;
+    color: rgba(255, 255, 255, 0.8);
+}
+.title {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    font-size: 100px;
+}
+.item {
+    padding: 5px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    margin: auto;
+}
+.text-box {
+    border-color: #cccccc;
+    padding: 6px;
+    font-size: 16px;
+    border-width: 1px;
+    border-radius: 4px;
+    border-style: hidden;
+    text-align: center;
+    background-color: #ffffff;
+    transition: all 60ms ease-in-out;
+    box-shadow: 0px 0px 25px 0px rgba(42, 42, 42, .48);
+}
+.text-box:focus {
+    outline: none;
+    background-color: rgba(#0a0808, 0.5);
+}
+.button {
+    display: flex;
+    overflow: hidden;
+    margin: 10px;
+    padding: 12px 12px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 60ms ease-in-out;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none !important;
+    text-transform: none;
+    text-transform: capitalize;
+    color: #fff;
+    border: 0 none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    justify-content: center;
+    align-items: center;
+}
+.button:hover {
+    transition: all 60ms ease;
+    opacity: .85;
+}
+.button:active {
+    transition: all 60ms ease;
+    transform: scale(.97);
+    opacity: .75;
+}
+.button.-dark {
+    background: #333030;
+}
+.button.-border {
+    border: 2px solid #333030;
+    background: transparent;
+    &:hover, &.-active {
+        color: #FFFFFF;
+        border-color: #333030;
+        background: #333030;
+    }
+}
