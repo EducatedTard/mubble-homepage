@@ -35,6 +35,7 @@ html {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     margin: auto;
+    text-align: center;
 }
 .text-box {
   margin-top: 20px;
@@ -98,4 +99,16 @@ html {
         border-color: #333030;
         background: #333030;
     }
+}
+
+@media screen and (max-width: 400px){
+  .title{
+    font-size: 50px;
+  }
+  .logo{
+    height: 100px;
+  }
+  .container{
+    padding-top: 50px;
+  }
 }
