@@ -55,6 +55,14 @@ html {
     outline: none;
     background-color: rgba(#0a0808, 0.5);
 }
+#response{
+  font-family: 'Arial';
+  padding: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  margin: auto;
+  text-align: center;
+}
 .button {
     display: flex;
     overflow: hidden;

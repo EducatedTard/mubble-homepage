@@ -14,7 +14,13 @@ var io = require('socket.io')(server);
 
 io.on('connection', function (socket) {
   socket.on('userData', function (data) {
-    mongoController.pushData(data);
+    mongoController.pushData(data,  function(error){
+      if(error){
+        socket.emit('database error');
+      } else {
+        socket.emit('success');
+      }
+    });
   });
 });
 
