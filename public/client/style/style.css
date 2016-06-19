@@ -1,14 +1,15 @@
 @font-face {
     font-family: basico;
-    src: url(basico.otf);
+    src: url(/fonts/basico.otf);
 }
 
 html {
-    background: url(background-clean.jpg) no-repeat center center fixed;
+    background: url(/img/background-clean.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    height: 100%;
 }
 .container {
     padding-top: 150px;
@@ -110,5 +111,11 @@ html {
   }
   .container{
     padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 320px){
+  .item{
+    font-size: 14px;
   }
 }
