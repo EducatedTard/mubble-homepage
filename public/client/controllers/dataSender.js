@@ -1,6 +1,13 @@
-console.log("hello");
 var socket = io.connect();
-socket.on('news', function (data) {
-  console.log(data);
-  socket.emit('my other event', { my: 'data' });
+
+$('#send-button').click(function(){
+  var input = $('#email-input').val();
+  if(isValidEmail(input)){
+    socket.emit('userData',input);
+  }
 });
+
+var isValidEmail = function(email){
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email);
+}
