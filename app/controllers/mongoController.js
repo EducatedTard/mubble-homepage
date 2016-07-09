@@ -29,6 +29,8 @@ var pushData = function(email, callback){
           console.log('saved :' + data);
           callback(err);
         });
+      } else {
+        callback();
       }
     });
   } else {
