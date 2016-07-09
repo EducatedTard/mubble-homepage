@@ -1,6 +1,6 @@
 var socket = io.connect();
 
-$('#response').fadeOut();
+var emailForm = $('#email-input');
 
 socket.on('success', function(){
   responseMessage('THANKS');
@@ -11,10 +11,17 @@ socket.on('database error', function(){
 })
 
 $('#send-button').click(function(){
-  var input = $('#email-input').val();
-  if(isValidEmail(input)){
-    socket.emit('userData',input);
-    disableButtons();
+  submitForm(emailForm);
+});
+
+emailForm.keypress(function(e){
+  if(e.which == 13){
+    submitForm(emailForm);
+    return false;
+  } else if(isValidEmail(emailForm.val())) {
+    validForm(emailForm);
+  } else {
+    setBackgroundColor(emailForm, '#ffffff');
   }
 });
 
@@ -24,12 +31,34 @@ var isValidEmail = function(email){
 };
 
 var disableButtons = function(){
-  $('#email-input').fadeOut();
+  emailForm.fadeOut();
   $('#send-button').fadeOut();
 };
 
 var responseMessage = function(message){
   $('#response').text(message);
   $('#response').fadeIn();
-  $('#response').show(); 
+  $('#response').show();
+};
+
+var submitForm = function(form) {
+  var input = form.val();
+  if(isValidEmail(input)){
+    socket.emit('userData',input);
+    disableButtons();
+  } else {
+    invalidForm(form);
+  }
+};
+
+var invalidForm = function(form) {
+  setBackgroundColor(form, '#ffc8c8');
+};
+
+var validForm = function(form) {
+  setBackgroundColor(form, '#aaffed');
+};
+
+var setBackgroundColor = function(item, color){
+  item.css('background-color', color);
 };
