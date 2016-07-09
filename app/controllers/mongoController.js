@@ -20,12 +20,16 @@ var User = mongoose.model('User', UserSchema);
 
 var pushData = function(email, callback){
   if(isValidEmail(email)){
-    var data = new User({
-      email: email
-    });
-    data.save(function(err, data){
-      console.log('saved :' + data);
-      callback(err);
+    User.findOne({ 'email': email}, function(err, user){
+      if(!err && !user){
+        var data = new User({
+          email: email
+        });
+        data.save(function(err, data){
+          console.log('saved :' + data);
+          callback(err);
+        });
+      }
     });
   } else {
     callback('invalid email');

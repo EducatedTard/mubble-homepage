@@ -1,6 +1,6 @@
 var socket = io.connect();
 
-  $('#response').fadeOut();
+$('#response').fadeOut();
 
 socket.on('success', function(){
   responseMessage('THANKS');
@@ -31,4 +31,5 @@ var disableButtons = function(){
 var responseMessage = function(message){
   $('#response').text(message);
   $('#response').fadeIn();
+  $('#response').show(); 
 };
